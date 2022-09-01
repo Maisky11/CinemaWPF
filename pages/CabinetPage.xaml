@@ -1,0 +1,41 @@
+﻿<Page x:Class="CinemaWPF.pages.CabinetPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CinemaWPF.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="370" d:DesignWidth="600"
+      Title="CabinetPage">
+
+    <Grid Background="#FF5F539A">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="1" x:Name="listTicket" Margin="10">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="Название фильма: " Foreground="White" />
+                        <TextBlock Text="{Binding Session.Movie.Title}" FontWeight="Bold" Foreground="White" />
+                        <TextBlock Text="  Место: ряд " Foreground="White" />
+                        <TextBlock Text="{Binding Place.Row}" FontWeight="Bold" Foreground="White" />
+                        <TextBlock Text=" место в ряду " Foreground="White" />
+                        <TextBlock Text="{Binding Place.Row_position}" FontWeight="Bold" Foreground="White" />
+                        <TextBlock Text=" Цена: " Foreground="White" />
+                        <TextBlock Text="{Binding Price}" FontWeight="Bold" Foreground="White" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Background="#FF7F71C3">
+            <TextBlock Text="Купленные билеты" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Margin="0,3,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Background="#FF7F71C3" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 0">
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

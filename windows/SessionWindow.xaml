@@ -1,0 +1,30 @@
+﻿<Window x:Class="CinemaWPF.windows.SessionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CinemaWPF.windows"
+        mc:Ignorable="d"
+        xmlns:gl="clr-namespace:System.Globalization;assembly=mscorlib"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Сессия" Height="400" Width="500">
+    <Grid Background="#FF8E7EDA">
+        <Border Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="500" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0" />
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Сессия" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" Cursor="Hand"/>
+
+                <ComboBox x:Name="comboBoxMovie" SelectedValue="{Binding movie_id}" materialDesign:HintAssist.Hint="Выберите фильм" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:ValidationAssist.FontSize="1"/>
+                <ComboBox x:Name="comboBoxHall" SelectedValue="{Binding hall_id}" materialDesign:HintAssist.Hint="Выберите зал" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:ValidationAssist.FontSize="1"/>
+                <DatePicker x:Name="textBoxDate" SelectedDate="{Binding Session_date, StringFormat=dd.MM.yyyy, ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}"  materialDesign:HintAssist.Hint="Введите дату запуска сессий" Style="{StaticResource MaterialDesignFloatingHintDatePicker}"/>
+                <materialDesign:TimePicker x:Name="textBoxTime" Text="{Binding Start_time}"  materialDesign:HintAssist.Hint="Введите время запуска сессий" Style="{StaticResource MaterialDesignFloatingHintTimePicker}"/>
+                <Grid>
+                    <Button Content="Отмена" Margin="0 20" Width="100"  HorizontalAlignment="Right" Click="Close_Button_Click" IsCancel="True" />
+                    <Button Content="ОК" Margin="0 20" Width="100"  HorizontalAlignment="Left" Click="Add_Button_Click" IsDefault="True"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

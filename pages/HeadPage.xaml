@@ -1,0 +1,28 @@
+﻿<Page x:Class="CinemaWPF.pages.HeadPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CinemaWPF.pages"
+      mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DesignHeight="370" d:DesignWidth="600"
+      Title="AuthPage">
+
+    <Grid Background="#FF7F71C3">
+        <Border Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0" />
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="CINEMA" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignHeadline1TextBlock}" FontSize="72" FontFamily="Showcard Gothic" Margin="0,10,0,20" />
+                <TextBlock Text="Телефон: 8-012-345-67-89" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Margin="30,0,0,10"/>
+                <TextBlock Text="Адрес: г. Город, улица, д. 1, ст. 1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Margin="30,0,0,10"/>
+                <TextBlock Text="Сайт: www.cinema.ru" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Margin="30,0,0,10"/>
+                <TextBlock Text="Электронная почта: cinema@cinema.ru" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Margin="30,0,0,10"/>
+
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
